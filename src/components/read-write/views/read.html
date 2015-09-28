@@ -1,0 +1,5 @@
+<div ng-if="ReadWrite.isInReadMode">
+    <span ng-transclude></span>
+    {{ReadWrite|json}}
+    <button ng-if="ReadWrite.isWriteModeEnabled" ng-click="ReadWrite.setWriteMode()">E</button>
+</div>

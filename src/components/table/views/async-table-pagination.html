@@ -1,0 +1,18 @@
+<nav ng-if="pages.length >= 2">
+    <span class="pull-left">Showing {{ ((currentPage-1) * stItemsByPage) + 1 }} - {{ currentPage * stItemsByPage }}  of {{totalItemCount }}</span>
+    <ul class="pagination table-pagination">
+        <li ng-show="currentPage > 1">
+            <a ng-click="selectPage(currentPage - 1)">&lt;</a>
+            <a ng-show="currentPage == numPages" ng-click="selectPage(currentPage - 2)">{{currentPage - 2}}</a>
+            <a ng-click="selectPage(currentPage - 1)">{{currentPage - 1}}</a>
+        </li>
+        <li class="active">
+            <a>{{currentPage}}</a>
+        </li>
+        <li ng-show="currentPage < numPages">
+            <a ng-click="selectPage(currentPage + 1)">{{currentPage + 1}}</a>
+            <a ng-show="currentPage == 1" ng-click="selectPage(currentPage + 2)">{{currentPage + 2}}</a>
+            <a ng-click="selectPage(currentPage + 1)">&gt;</a>
+        </li>
+    </ul>
+</nav>

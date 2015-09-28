@@ -1,0 +1,19 @@
+<form name="form">
+    <label>
+        {{FormElement.label}}
+        <span ng-show="FormElement.isRequired && !FormElement.isReadOnly">*</span>
+    </label>
+    <read-write>
+        <read>{{FormElement.value}}</read>
+        <write ng-if="!FormElement.isReadOnly">
+            <input type="{{FormElement.type || 'text'}}"
+                   name="element"
+                   ng-model="FormElement.value"
+                   ng-required="FormElement.isRequired"
+                   ng-blur="ReadWrite.setReadMode()">
+        </write>
+    </read-write>
+    <div ng-messages="form.element.$error">
+        <div ng-message="required">This field is required.</div>
+    </div>
+</form>

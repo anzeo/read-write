@@ -1,0 +1,49 @@
+<table st-table class="table table-striped">
+    <thead>
+    <tr>
+        <th colspan="{{Table.cols.length}}" class="text-center">
+            Paginz plz
+            <!--<div st-pagination></div>-->
+        </th>
+    </tr>
+    <tr>
+        <th ng-repeat="col in Table.cols track by $index">{{col}}</th>
+    </tr>
+    </thead>
+    <tbody ng-show="!Table.isLoading">
+        <tr ng-repeat="row in Table.items track by $index" ng-transclude></tr>
+    </tbody>
+    <tbody ng-show="Table.isLoading">
+        <tr ng-show="Table.isLoading">
+            <td colspan="{{Table.cols.length}}">
+                <i class="glyphicon glyphicon-refresh glyphicon-spin"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--<table st-table class="table table-striped" ev3-async-table>-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th colspan="3" class="text-center">-->
+<!--<div st-pagination st-items-by-page="2"></div>-->
+<!--</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th st-sort="firstName">First Name</th>-->
+<!--<th>last name</th>-->
+<!--<th>Age</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr ng-if="!isLoading" ng-repeat="row in items">-->
+<!--<td>{{row.firstName}}</td>-->
+<!--<td>{{row.lastName}}</td>-->
+<!--<td>{{row.age}}</td>-->
+<!--</tr>-->
+<!--<tr ng-if="isLoading">-->
+<!--<td colspan="3">-->
+<!--<i class="glyphicon glyphicon-refresh glyphicon-spin"></i>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->

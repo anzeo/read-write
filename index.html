@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI Demo</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- bower:css -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/src/components/table/styles/ev3-async-table.css">
+    <!-- endinject -->
+</head>
+<body ng-controller="DemoCtrl as vm">
+
+    <!--<ev3-table items="vm.items">-->
+        <!--<ev3-table-col field="firstName">{{field}} HAHAHA</ev3-table-col>-->
+        <!--<ev3-table-col field="lastName">{{field}}</ev3-table-col>-->
+        <!--<ev3-table-col field="age">{{field}}</ev3-table-col>-->
+    <!--</ev3-table>-->
+
+    <h1>{{vm.greeting}} world!</h1>
+
+    <label>Is read-only? <input ng-model="vm.isReadOnly" type="checkbox"></label>
+    <label>Is required?<input ng-model="vm.isRequired" type="checkbox"></label>
+
+    <form-element value="vm.greeting" label="Greeting" required="vm.isRequired" readonly="vm.isReadOnly"></form-element>
+
+    <!-- bower:js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endinject -->
+    <script src="/node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            baseURL: '/src',
+            defaultJSExtensions: true
+        });
+
+        // loads /app/module.js
+        System.import('app/module.js');
+    </script>
+</body>
+</html>
